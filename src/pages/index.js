@@ -1,32 +1,83 @@
-import React from "react"
+import React from 'react'
+import Link from 'gatsby-link'
+import kebabCase from 'lodash/kebabCase'
 
-export default ({ data }) => 
-<div>
-  <h1>
-    {data.allTaxonomyTermThemes.edges[0].node.name}
-   </h1>
-   <img src={data.allTaxonomyTermThemes.edges[0].node.relationships.field_theme_image.localFile.relativePath} />
-</div>
+const ContentNodeComponent = ({ data }) => (
+  <li>
+    <strong>{data.__typename}</strong>: {data.title}
+  </li>
+)
 
-export const query = graphql `
-  query MyFilesQuery {
-    allTaxonomyTermThemes
-      (filter: {tid: {eq: 3}})
-      {
+const SubThemeComponent = ({ data }) => (
+  <li>
+    Subtheme: <strong>{data.name}</strong>
+    {data.relationships.contentNodes ? (
+      <ul>
+        {data.relationships.contentNodes.map(contentNode => (
+          <ContentNodeComponent data={contentNode} />
+        ))}
+      </ul>
+    ) : (
+      <span style={{ color: 'red' }}> (no contentNodes)</span>
+    )}
+  </li>
+)
+
+const ThemeComponent = ({ data }) => (
+  <li>
+    Theme: <Link to={`/themes/${kebabCase(data.name)}`}>{data.name}</Link>
+    {/* {data.relationships.subthemes ? (
+      <ul>
+        {data.relationships.subthemes.map(subTheme => (
+          <SubThemeComponent data={subTheme} />
+        ))}
+      </ul>
+    ) : (
+      <div>No subthemes</div>
+    )} */}
+  </li>
+)
+
+export default ({ data }) => (
+  <ul>
+    {data.allTaxonomyTermThemes.edges.map(({ node }) => (
+      <ThemeComponent data={node} />
+    ))}
+  </ul>
+)
+
+export const query = graphql`
+  query IndexQuery {
+    allTaxonomyTermThemes {
       edges {
         node {
           id
+          name
           relationships {
-            field_theme_image {
-              localFile {
-                id
-                relativePath
-                absolutePath
+            subthemes: backref_field_belongs_to_theme {
+              name
+              id
+              relationships {
+                contentNodes: backref_field_belongs_to_subtheme {
+                  __typename
+                  ... on node__article {
+                    title
+                  }
+                  ... on node__faq {
+                    title
+                  }
+                  ... on node__clip {
+                    title
+                  }
+                  ... on node__quickfact {
+                    title
+                  }
+                }
               }
             }
           }
         }
       }
-    }}
-  
+    }
+  }
 `

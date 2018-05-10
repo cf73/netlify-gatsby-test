@@ -197,8 +197,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: hsla(0, 0%, 23%, 0.8);
+  font-family: "ff-tisa-web-pro", georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -228,8 +228,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "lato";
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -262,12 +261,13 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "lato";
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 h4 {
   margin-left: 0;
@@ -279,12 +279,13 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-family: "lato";
+  font-weight: 500;
   text-rendering: optimizeLegibility;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 h5 {
   margin-left: 0;
@@ -383,6 +384,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  /* line-height: 1.7; */
 }
 figure {
   margin-left: 0;
@@ -621,4 +623,65 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+
+/* ADDITIONAL STYLES */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-basis: 100%;
+  margin-left:15px;
+  margin-right:15px;
+  flex: 1;   /* just moved this here */ 
+}
+
+._60 {
+  flex: 1.5;
+  max-width: 720px;
+}
+
+._25 {
+  flex: .15;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  border: solid thin lightgrey;
+  font-family: 'Lato';
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 1s;
+}
+.tag:hover {
+  background-color: beige;
+  transition: background-color 1s;
+}
+
+/* @media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
+} */
+
+html {
+  overflow: visible;
+}
+
+body.modal-open {
+  overflow-y: hidden;
 }
