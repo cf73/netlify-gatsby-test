@@ -1,0 +1,27 @@
+<OverlayFilter>
+    {/* <p style={{textAlign:'center', fontFamily:'Lato', fontWeight:'800', position:'relative', top:-15}}>Brief glossary-style description text here explaining tag and maybe raising issues in which it comes up.</p> */}
+        {
+        [`faq`, `article`, `clip`].filter(itemType => itemExists(itemType)).map(articleType => (
+            <span
+            key={articleType}
+            style={{ marginLeft: 15, marginRight: 30, cursor: `pointer`, fontFamily:'Lato', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.2em' }}
+            onClick={ () => {
+                const newQueryParams = { ... queryParams }
+                if (newQueryParams[`type`] == articleType){
+                delete newQueryParams[`type`]
+                } else {
+                newQueryParams[`type`] = articleType;
+                }
+                navigateTo(`?${queryString.stringify(newQueryParams)}`)
+            }}
+            >
+            { articleType }
+            </span>
+        ))
+    }
+</OverlayFilter>
+
+
+
+
+ 

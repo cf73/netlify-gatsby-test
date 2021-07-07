@@ -1,0 +1,47 @@
+.logo {
+    position: fixed;
+    z-index: 9999999999;
+    top: 60px;
+    left: 30px;
+    font-weight: 100;
+    /* font-family: "ff-tisa-web-pro", georgia, serif; */
+    font-family: 'Lato';
+    font-size: 84px;
+    letter-spacing: 0.17em;
+    font-weight: 700;
+    /* opacity: 0.7; */
+    display: none;
+}
+.filmSubtitle {
+    font-size: 9px;
+    position: relative;
+    top: 2.5em;
+    left: -17em;
+    font-family: 'Lato';
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.065em;
+    /* font-style: italic; */
+  }
+  
+.nav {
+    position: absolute;
+    top: 45px;
+    right: 30px;
+    z-index: 9999999999;
+    /* opacity: 0.75; */
+    mix-blend-mode: normal;
+}
+.navItem {
+    font-family: 'Lato';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.045em;
+    display: block;
+    color: #151515;
+    text-decoration: none;
+    line-height: 2.5;
+}
+.navItem:hover {
+    color: snow;
+}

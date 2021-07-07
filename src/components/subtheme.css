@@ -1,0 +1,71 @@
+button {
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    letter-spacing: 0.06em;
+    outline: none;
+    cursor: pointer;
+    background:none;
+}
+.subtheme-description {
+    font-size: 18px;
+    color: rgba(59, 59, 59, 0.8);
+    line-height: 1.75;
+    max-width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Lato';
+    letter-spacing: 0.02em;
+    margin-bottom: 45px;
+    font-style: italic;
+    max-width: 600px;
+}
+.caption {
+    font-family: 'Lato';
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding:30px;
+}
+.poster {
+    width: 100%;
+    height: 66%;
+    background-color: grey;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.card-large-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+.RCcard-large-text {
+    font-size: 14px;
+    font-family: 'Lato';
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+}
+.RCimage {
+    height: 70px;
+    width: 70px;
+    background-color: grey;
+    float: left;
+}
+.articleCardImage {
+    height: 100%;
+    flex: 1 1 auto;
+    width: 100%;
+    background-color: grey;
+}
+.interviewCardPhoto {
+    height: 192px;
+    width: 192px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 15px auto;
+    background-size: cover;
+    background-position: center center;
+}

@@ -1,0 +1,60 @@
+.articles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 30px;
+}
+  
+.articleCard {
+    background-color: white;
+    height: 400px;
+    margin: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 2px 15px 0px rgba(179,179,179,0.38);
+    -moz-box-shadow: 0px 2px 15px 0px rgba(179,179,179,0.38);
+    box-shadow: 0px 2px 15px 0px rgba(179,179,179,0.38);
+    transition: all .3s;
+    /* border: solid 4px black; */
+}
+.articleCard:hover {
+    -webkit-box-shadow: 0px 7px 15px 2px rgba(179,179,179,0.78);
+    -moz-box-shadow: 0px 7px 15px 2px rgba(179,179,179,0.78);
+    box-shadow: 0px 7px 15px 2px rgba(179,179,179,0.78);
+    transition: all .3s;
+  }
+
+.articleCard:nth-child(even) {
+    align-self: flex-end;
+  }
+
+.articleCardImage {
+    background-color: rgb(243, 33, 215);
+    /* flex: 390px 0 0;   */
+    overflow: hidden;  
+    background-position: center;
+    background-size: cover;
+    border-bottom: solid 0px black;
+    margin-bottom: 7.5px;
+}
+
+.articleCard:nth-child(even) .articleCardImage {
+    /* flexbox can change order of rendered elements*/
+    order: 2;
+  }
+
+.articleExcerpt {
+    line-height: 1.5;
+    font-family: 'Lato';
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    padding: 0 30px 0px 30px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
